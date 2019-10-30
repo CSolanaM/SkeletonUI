@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SnapshotTesting",
+        "repositoryURL": "https://github.com/IdeasOnCanvas/swift-snapshot-testing",
+        "state": {
+          "branch": "nsview-imagesnapshot",
+          "revision": "07bc905fddb71de7592d5367cbc4cd2d5f57c786",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# fail if any commands fails
+set -x
+
+# Execute checks:
+
+readonly root_directory=`../../`
+
+cd "${root_directory}"
+
+if !which swiftformat >/dev/null; then
+  echo "SwiftFormat not installed. Please run: brew install swiftformat"
+  exit 1
+fi
+
+if !which swiftlint >/dev/null; then
+  echo "SwiftLint not installed. Please run: brew install swiftlint"
+  exit 1
+fi
+
+find Sources -type f -name '*.swift' -exec md5 {} ';' | md5 > .pre_format_hash
+
+swift test
+
+swiftformat .
+
+swiftlint autocorrect
+
+find Sources -type f -name '*.swift' -exec md5 {} ';' | md5 > .post_format_hash
+
+diff .pre_format_hash .post_format_hash > /dev/null || { echo \"File formatting modified\" ; rm .pre_format_hash ; rm .post_format_hash ; exit "${LINENO}"; }
+
+rm .pre_format_hash ; rm .post_format_hash

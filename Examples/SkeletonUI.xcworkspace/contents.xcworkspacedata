@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "container:SkeletonUI-macOS-iOS/SkeletonUI-macOS-iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SkeletonUI-watchOS/SkeletonUI-watchOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SkeletonUI-tvOS/SkeletonUI-tvOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:..">
+   </FileRef>
+</Workspace>

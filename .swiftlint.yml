@@ -1,0 +1,7 @@
+excluded:
+  - .build/
+  - Tests/SkeletonUISnapshotTests/AutoMockable.generated.swift
+
+line_length:
+  warning: 220
+  error: 260

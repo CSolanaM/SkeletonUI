@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Fail if any commands fails
+set -x
+
+# Run snapshot tests:
+
+readonly scripts_path="$( cd "$(dirname "$0")" ; pwd -P )"
+readonly root_directory=`"${scripts_path}/repository-root-path"`
+
+cd "${root_directory}"
+
+xcodebuild test -destination platform="macOS" -scheme "SnapshotTests"
+xcodebuild test -destination name="Apple TV" -scheme "SnapshotTests"
+xcodebuild test -destination name="Apple TV 4K" -scheme "SnapshotTests"
+xcodebuild test -destination name="iPhone 8" -scheme "SnapshotTests"
+xcodebuild test -destination name="iPhone 11 Pro Max" -scheme "SnapshotTests"
+xcodebuild test -destination name="iPad Pro (12.9-inch) (3rd generation)" -scheme "SnapshotTests"

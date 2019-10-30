@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Regenerate mocks:
+
+readonly scripts_path="$( cd "$(dirname "$0")" ; pwd -P )"
+readonly root_directory=`"${scripts_path}/repository-root-path"`
+
+cd "${root_directory}"
+
+if ! which sourcery >/dev/null; then
+  echo "Sourcery not installed. Please run: brew install sourcery"
+fi
+
+sourcery --config .sourcery.yml

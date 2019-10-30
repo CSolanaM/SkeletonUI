@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87A5D90F230803F50096BD32 /* SkeletonUI-watchOS WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 87A5D90E230803F50096BD32 /* SkeletonUI-watchOS WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		87A5D915230803F50096BD32 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A5D913230803F50096BD32 /* Interface.storyboard */; };
+		87A5D917230803F60096BD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A5D916230803F60096BD32 /* Assets.xcassets */; };
+		87A5D91E230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 87A5D91D230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		87A5D923230803F60096BD32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D922230803F60096BD32 /* ContentView.swift */; };
+		87A5D925230803F60096BD32 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D924230803F60096BD32 /* HostingController.swift */; };
+		87A5D927230803F60096BD32 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A5D926230803F60096BD32 /* ExtensionDelegate.swift */; };
+		87A5D929230803F70096BD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A5D928230803F70096BD32 /* Assets.xcassets */; };
+		87A5D92C230803F70096BD32 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A5D92B230803F70096BD32 /* Preview Assets.xcassets */; };
+		87A5D93D2308040C0096BD32 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 87A5D93C2308040C0096BD32 /* SkeletonUI */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87A5D910230803F50096BD32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87A5D904230803F50096BD32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87A5D90D230803F50096BD32;
+			remoteInfo = "SkeletonUI-watchOS WatchKit App";
+		};
+		87A5D91F230803F60096BD32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87A5D904230803F50096BD32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87A5D91C230803F60096BD32;
+			remoteInfo = "SkeletonUI-watchOS WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		87A5D933230803F70096BD32 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				87A5D91E230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A5D937230803F70096BD32 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				87A5D90F230803F50096BD32 /* SkeletonUI-watchOS WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		87A5D90A230803F50096BD32 /* SkeletonUI-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkeletonUI-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A5D90E230803F50096BD32 /* SkeletonUI-watchOS WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SkeletonUI-watchOS WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A5D914230803F50096BD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		87A5D916230803F60096BD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87A5D918230803F60096BD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87A5D91D230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SkeletonUI-watchOS WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A5D922230803F60096BD32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		87A5D924230803F60096BD32 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		87A5D926230803F60096BD32 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		87A5D928230803F70096BD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87A5D92B230803F70096BD32 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		87A5D92D230803F70096BD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87A5D91A230803F60096BD32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A5D93D2308040C0096BD32 /* SkeletonUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87A5D903230803F50096BD32 = {
+			isa = PBXGroup;
+			children = (
+				87A5D912230803F50096BD32 /* SkeletonUI-watchOS WatchKit App */,
+				87A5D921230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension */,
+				87A5D90B230803F50096BD32 /* Products */,
+				87A5D93B2308040C0096BD32 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		87A5D90B230803F50096BD32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87A5D90A230803F50096BD32 /* SkeletonUI-watchOS.app */,
+				87A5D90E230803F50096BD32 /* SkeletonUI-watchOS WatchKit App.app */,
+				87A5D91D230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87A5D912230803F50096BD32 /* SkeletonUI-watchOS WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				87A5D913230803F50096BD32 /* Interface.storyboard */,
+				87A5D916230803F60096BD32 /* Assets.xcassets */,
+				87A5D918230803F60096BD32 /* Info.plist */,
+			);
+			path = "SkeletonUI-watchOS WatchKit App";
+			sourceTree = "<group>";
+		};
+		87A5D921230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				87A5D922230803F60096BD32 /* ContentView.swift */,
+				87A5D924230803F60096BD32 /* HostingController.swift */,
+				87A5D926230803F60096BD32 /* ExtensionDelegate.swift */,
+				87A5D928230803F70096BD32 /* Assets.xcassets */,
+				87A5D92D230803F70096BD32 /* Info.plist */,
+				87A5D92A230803F70096BD32 /* Preview Content */,
+			);
+			path = "SkeletonUI-watchOS WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		87A5D92A230803F70096BD32 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				87A5D92B230803F70096BD32 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		87A5D93B2308040C0096BD32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87A5D909230803F50096BD32 /* SkeletonUI-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A5D938230803F70096BD32 /* Build configuration list for PBXNativeTarget "SkeletonUI-watchOS" */;
+			buildPhases = (
+				87A5D908230803F50096BD32 /* Resources */,
+				87A5D937230803F70096BD32 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87A5D911230803F50096BD32 /* PBXTargetDependency */,
+			);
+			name = "SkeletonUI-watchOS";
+			productName = "SkeletonUI-watchOS";
+			productReference = 87A5D90A230803F50096BD32 /* SkeletonUI-watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		87A5D90D230803F50096BD32 /* SkeletonUI-watchOS WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A5D934230803F70096BD32 /* Build configuration list for PBXNativeTarget "SkeletonUI-watchOS WatchKit App" */;
+			buildPhases = (
+				87A5D90C230803F50096BD32 /* Resources */,
+				87A5D933230803F70096BD32 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87A5D920230803F60096BD32 /* PBXTargetDependency */,
+			);
+			name = "SkeletonUI-watchOS WatchKit App";
+			productName = "SkeletonUI-watchOS WatchKit App";
+			productReference = 87A5D90E230803F50096BD32 /* SkeletonUI-watchOS WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		87A5D91C230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A5D930230803F70096BD32 /* Build configuration list for PBXNativeTarget "SkeletonUI-watchOS WatchKit Extension" */;
+			buildPhases = (
+				87A5D919230803F60096BD32 /* Sources */,
+				87A5D91A230803F60096BD32 /* Frameworks */,
+				87A5D91B230803F60096BD32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SkeletonUI-watchOS WatchKit Extension";
+			packageProductDependencies = (
+				87A5D93C2308040C0096BD32 /* SkeletonUI */,
+			);
+			productName = "SkeletonUI-watchOS WatchKit Extension";
+			productReference = 87A5D91D230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87A5D904230803F50096BD32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "C. S. M.";
+				TargetAttributes = {
+					87A5D909230803F50096BD32 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					87A5D90D230803F50096BD32 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					87A5D91C230803F60096BD32 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 87A5D907230803F50096BD32 /* Build configuration list for PBXProject "SkeletonUI-watchOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87A5D903230803F50096BD32;
+			productRefGroup = 87A5D90B230803F50096BD32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87A5D909230803F50096BD32 /* SkeletonUI-watchOS */,
+				87A5D90D230803F50096BD32 /* SkeletonUI-watchOS WatchKit App */,
+				87A5D91C230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87A5D908230803F50096BD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A5D90C230803F50096BD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A5D917230803F60096BD32 /* Assets.xcassets in Resources */,
+				87A5D915230803F50096BD32 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87A5D91B230803F60096BD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A5D92C230803F70096BD32 /* Preview Assets.xcassets in Resources */,
+				87A5D929230803F70096BD32 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87A5D919230803F60096BD32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A5D925230803F60096BD32 /* HostingController.swift in Sources */,
+				87A5D923230803F60096BD32 /* ContentView.swift in Sources */,
+				87A5D927230803F60096BD32 /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87A5D911230803F50096BD32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87A5D90D230803F50096BD32 /* SkeletonUI-watchOS WatchKit App */;
+			targetProxy = 87A5D910230803F50096BD32 /* PBXContainerItemProxy */;
+		};
+		87A5D920230803F60096BD32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87A5D91C230803F60096BD32 /* SkeletonUI-watchOS WatchKit Extension */;
+			targetProxy = 87A5D91F230803F60096BD32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		87A5D913230803F50096BD32 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87A5D914230803F50096BD32 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87A5D92E230803F70096BD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		87A5D92F230803F70096BD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87A5D931230803F70096BD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SkeletonUI-watchOS WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = LBHLZC347V;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SkeletonUI-watchOS WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.csolanam.SkeletonUI-watchOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		87A5D932230803F70096BD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SkeletonUI-watchOS WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = LBHLZC347V;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SkeletonUI-watchOS WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.csolanam.SkeletonUI-watchOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		87A5D935230803F70096BD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LBHLZC347V;
+				IBSC_MODULE = SkeletonUI_watchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "SkeletonUI-watchOS WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.csolanam.SkeletonUI-watchOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		87A5D936230803F70096BD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LBHLZC347V;
+				IBSC_MODULE = SkeletonUI_watchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "SkeletonUI-watchOS WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.csolanam.SkeletonUI-watchOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		87A5D939230803F70096BD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LBHLZC347V;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.csolanam.SkeletonUI-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		87A5D93A230803F70096BD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LBHLZC347V;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.csolanam.SkeletonUI-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87A5D907230803F50096BD32 /* Build configuration list for PBXProject "SkeletonUI-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A5D92E230803F70096BD32 /* Debug */,
+				87A5D92F230803F70096BD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87A5D930230803F70096BD32 /* Build configuration list for PBXNativeTarget "SkeletonUI-watchOS WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A5D931230803F70096BD32 /* Debug */,
+				87A5D932230803F70096BD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87A5D934230803F70096BD32 /* Build configuration list for PBXNativeTarget "SkeletonUI-watchOS WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A5D935230803F70096BD32 /* Debug */,
+				87A5D936230803F70096BD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87A5D938230803F70096BD32 /* Build configuration list for PBXNativeTarget "SkeletonUI-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87A5D939230803F70096BD32 /* Debug */,
+				87A5D93A230803F70096BD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87A5D93C2308040C0096BD32 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SkeletonUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 87A5D904230803F50096BD32 /* Project object */;
+}

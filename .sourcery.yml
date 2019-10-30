@@ -1,0 +1,6 @@
+sources:
+  - Sources/
+templates:
+  - Templates/
+output:
+  Tests/SkeletonUISnapshotTests/AutoMockable.generated.swift

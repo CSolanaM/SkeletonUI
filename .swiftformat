@@ -1,0 +1,3 @@
+--swiftversion 5.1
+--exclude **/*.generated.swift
+--commas inline

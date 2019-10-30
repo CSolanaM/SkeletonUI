@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Fail if any commands fails
+set -x
+
+# Copy files:
+
+readonly scripts_path="$( cd "$(dirname "$0")" ; pwd -P )"
+readonly root_directory=`"${scripts_path}/repository-root-path"`
+readonly scripts_directory="${root_directory}/Scripts"
+readonly hooks_directory="${root_directory}/.git/hooks"
+
+pre_commit_path="${scripts_directory}/pre-commit"
+chmod +x "${pre_commit_path}"
+cp "${pre_commit_path}" "${hooks_directory}/" 
