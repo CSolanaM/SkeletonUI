@@ -15,7 +15,8 @@ public struct SkeletonModifier: ViewModifier {
             } else {
                 content.transition(skeleton.presenter.transition)
             }
-        }.animation(skeleton.presenter.animated, value: skeleton.presenter.loading)
+        }
+        .animation(skeleton.presenter.animated, value: skeleton.presenter.loading)
     }
 
     private func skeleton(_ line: Int) -> SkeletonInteractable {
