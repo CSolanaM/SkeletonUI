@@ -5,15 +5,18 @@ public struct SkeletonModifier: ViewModifier {
     let skeleton: SkeletonInteractable
 
     public func body(content: Content) -> some View {
-        if skeleton.loading.value {
-            return AnyView(VStack(spacing: skeleton.multiline.presenter.spacing) {
-                ForEach(0 ..< skeleton.multiline.presenter.lines) { line in
-                    SkeletonView(skeleton: self.skeleton(line))
-                }
-            })
-        } else {
-            return AnyView(content)
+        ZStack {
+            if skeleton.presenter.loading {
+                VStack(spacing: skeleton.multiline.presenter.spacing) {
+                    ForEach(0 ..< skeleton.multiline.presenter.lines) { line in
+                        SkeletonView(skeleton: self.skeleton(line))
+                    }
+                }.transition(skeleton.presenter.transition)
+            } else {
+                content.transition(skeleton.presenter.transition)
+            }
         }
+        .animation(skeleton.presenter.animated, value: skeleton.presenter.loading)
     }
 
     private func skeleton(_ line: Int) -> SkeletonInteractable {
