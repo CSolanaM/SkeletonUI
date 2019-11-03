@@ -208,6 +208,11 @@ class ShapeInteractableMock: ShapeInteractable {
 
 }
 class SkeletonInteractableMock: SkeletonInteractable {
+    var presenter: SkeletonPresenter {
+        get { return underlyingPresenter }
+        set(value) { underlyingPresenter = value }
+    }
+    var underlyingPresenter: SkeletonPresenter!
     var shape: ShapeInteractable {
         get { return underlyingShape }
         set(value) { underlyingShape = value }
@@ -228,10 +233,5 @@ class SkeletonInteractableMock: SkeletonInteractable {
         set(value) { underlyingAnimation = value }
     }
     var underlyingAnimation: AnimationInteractable!
-    var loading: CurrentValueSubject<Bool, Never> {
-        get { return underlyingLoading }
-        set(value) { underlyingLoading = value }
-    }
-    var underlyingLoading: CurrentValueSubject<Bool, Never>!
 
 }
