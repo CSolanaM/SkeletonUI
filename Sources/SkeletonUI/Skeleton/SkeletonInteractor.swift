@@ -18,7 +18,7 @@ final class SkeletonInteractor: SkeletonInteractable {
     let animation: AnimationInteractable
 
     init(_ loading: Bool, transition: AnyTransition?, animated: Animation?, shape: ShapeInteractable = ShapeInteractor(), multiline: MultilineInteractable = MultilineInteractor(), appearance: AppearanceInteractable = AppearanceInteractor(), animation: AnimationInteractable = AnimationInteractor()) {
-        self.presenter = SkeletonPresenter(loading, transition: transition, animated: animated)
+        presenter = SkeletonPresenter(loading, transition: transition, animated: animated)
         self.shape = shape
         self.multiline = multiline
         self.appearance = appearance
