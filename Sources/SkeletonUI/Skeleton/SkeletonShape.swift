@@ -42,19 +42,18 @@ struct SkeletonShape: Shape {
                 self.fill(color)
                     .opacity(opacity.value)
             })
-        case let .gradient(.linear, color, background):
+        case let .gradient(.linear, color, background, radius, angle):
             return AnyView(ZStack {
                 self.fill(background)
-                self.fill(LinearGradient(gradient: Gradient(colors: [background, color, background]), startPoint: UnitPoint(x: position.value - 1, y: 0.5), endPoint: UnitPoint(x: position.value + 1, y: 0.5)))
-                    .opacity(opacity.value)
+                self.fill(LinearGradient(gradient: Gradient(colors: [background, color, background]), startPoint: .point(with: position.value, -radius, angle), endPoint: .point(with: position.value, radius, angle))).opacity(opacity.value)
             })
-        case let .gradient(.radial, color, background):
+        case let .gradient(.radial, color, background, _, _):
             return AnyView(ZStack {
                 self.fill(background)
                 self.fill(RadialGradient(gradient: Gradient(colors: [color, background]), center: .center, startRadius: .zero, endRadius: radius.value))
                     .opacity(opacity.value)
             })
-        case let .gradient(.angular, color, background):
+        case let .gradient(.angular, color, background, _, _):
             return AnyView(ZStack {
                 self.fill(background)
                 self.fill(AngularGradient(gradient: Gradient(colors: [background, color, background]), center: .center, startAngle: .zero, endAngle: .degrees(angle.value)))
