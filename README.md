@@ -13,8 +13,6 @@
 
 SkeletonUI aims to bring an elegant, declarative syntax to skeleton loading animations. Get rid of loading screens or spinners and start using skeletons to represent final content shapes.
 
-**⚠️ WARNING ⚠️** CI tests workflow will keep failing until GitHub Actions adds macOS Catalina (10.15) support.
-
 # Requirements :gear:
 
 - macOS 10.15.
