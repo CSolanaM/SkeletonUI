@@ -35,7 +35,7 @@ extension Color {
 
 public enum AppearanceType: Equatable {
     case solid(color: Color = .primary, background: Color = .background)
-    case gradient(GradientType = .linear, color: Color = .primary, background: Color = .background)
+    case gradient(GradientType = .linear, color: Color = .primary, background: Color = .background, radius: CGFloat = 1, angle: CGFloat = .zero)
 }
 
 // sourcery: AutoMockable
