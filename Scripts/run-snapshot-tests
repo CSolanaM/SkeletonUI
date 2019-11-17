@@ -10,7 +10,6 @@ readonly root_directory=`"${scripts_path}/repository-root-path"`
 
 cd "${root_directory}"
 
-xcodebuild test -destination platform="macOS" -scheme "SkeletonUISnapshotTests"
 xcodebuild test -destination name="Apple TV" -scheme "SkeletonUISnapshotTests"
 xcodebuild test -destination name="Apple TV 4K" -scheme "SkeletonUISnapshotTests"
 xcodebuild test -destination name="iPhone 8" -scheme "SkeletonUISnapshotTests"
