@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.3](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.3)
+### Added
+-
+### Changed
+- Update Snapshot testing package to pointfreeco repository.
+### Removed
+-
+### Fixed
+-
+
 ## [1.0.2](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.2)
 ### Added
 - Slope angle.

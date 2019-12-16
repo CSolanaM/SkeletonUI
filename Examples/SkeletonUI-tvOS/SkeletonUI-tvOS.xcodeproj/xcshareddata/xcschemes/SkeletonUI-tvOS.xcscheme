@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SkeletonUI"
-               BuildableName = "SkeletonUI"
-               BlueprintName = "SkeletonUI"
-               ReferencedContainer = "container:">
+               BlueprintIdentifier = "87A5D8EA230803A40096BD32"
+               BuildableName = "SkeletonUI-tvOS.app"
+               BlueprintName = "SkeletonUI-tvOS"
+               ReferencedContainer = "container:SkeletonUI-tvOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "87A5D8EA230803A40096BD32"
+            BuildableName = "SkeletonUI-tvOS.app"
+            BlueprintName = "SkeletonUI-tvOS"
+            ReferencedContainer = "container:SkeletonUI-tvOS.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "SkeletonUI"
-            BuildableName = "SkeletonUI"
-            BlueprintName = "SkeletonUI"
-            ReferencedContainer = "container:">
+            BlueprintIdentifier = "87A5D8EA230803A40096BD32"
+            BuildableName = "SkeletonUI-tvOS.app"
+            BlueprintName = "SkeletonUI-tvOS"
+            ReferencedContainer = "container:SkeletonUI-tvOS.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
