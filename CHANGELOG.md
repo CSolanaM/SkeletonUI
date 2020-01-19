@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.4](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.4)
+### Added
+- SecureField support.
+- SkeletonForEach support.
+- Update Snapshot testing package to pointfreeco repository.
+### Changed
+-
+### Removed
+-
+### Fixed
+-
+
 ## [1.0.3](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.3)
 ### Added
 -
