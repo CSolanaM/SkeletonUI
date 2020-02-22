@@ -40,23 +40,31 @@ final class SnapshotTests: XCTestCase {
     }
 
     func testDefaultTextField() {
-        let view = TextField(nil, text: Binding.constant(String())).skeleton(with: true)
-        assertNamedSnapshot(matching: view, as: .image(size: CGSize(width: 100, height: 50)))
+        let one = TextField(nil, text: Binding.constant(String())).skeleton(with: true)
+        let two = TextField(nil, value: Binding.constant(String()), formatter: NumberFormatter()).skeleton(with: true)
+        assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 50)))
+        assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 50)))
     }
 
     func testCustomTextField() {
-        let view = TextField(nil, text: Binding.constant(String())).skeleton(with: true).appearance(type: .gradient(.angular)).shape(type: .ellipse)
-        assertNamedSnapshot(matching: view, as: .image(size: CGSize(width: 100, height: 50)))
+        let one = TextField(nil, text: Binding.constant(String())).skeleton(with: true).appearance(type: .gradient(.angular)).shape(type: .ellipse)
+        let two = TextField(nil, value: Binding.constant(String()), formatter: NumberFormatter()).skeleton(with: true).appearance(type: .gradient(.angular)).shape(type: .ellipse)
+        assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 50)))
+        assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 50)))
     }
 
     func testDefaultToggle() {
-        let view = Toggle(nil, isOn: Binding.constant(false)).skeleton(with: true)
-        assertNamedSnapshot(matching: view, as: .image(size: CGSize(width: 100, height: 50)))
+        let one = Toggle(nil, isOn: Binding.constant(false)).skeleton(with: true)
+        let two = Toggle(isOn: nil, label: { Text(String()) }).skeleton(with: true)
+        assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 50)))
+        assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 50)))
     }
 
     func testCustomToggle() {
-        let view = Toggle(nil, isOn: Binding.constant(false)).skeleton(with: true).appearance(type: .gradient(.radial)).shape(type: .rounded(.radius(10)))
-        assertNamedSnapshot(matching: view, as: .image(size: CGSize(width: 100, height: 50)))
+        let one = Toggle(nil, isOn: Binding.constant(false)).skeleton(with: true).appearance(type: .gradient(.radial)).shape(type: .rounded(.radius(10)))
+        let two = Toggle(isOn: nil, label: { Text(String()) }).skeleton(with: true).appearance(type: .gradient(.radial)).shape(type: .rounded(.radius(10)))
+        assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 50)))
+        assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 50)))
     }
 
     func testDefaultSecureField() {
