@@ -12,8 +12,10 @@ extension String: Identifiable {
 
 final class SnapshotTests: XCTestCase {
     func testDefaultText() {
-        let view = Text(nil).skeleton(with: true)
-        assertNamedSnapshot(matching: view, as: .image(size: CGSize(width: 100, height: 50)))
+        let one = Text(nil).skeleton(with: true)
+        let two = Text(verbatim: nil).skeleton(with: true)
+        assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 50)))
+        assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 50)))
     }
 
     func testCustomText() {
@@ -23,20 +25,44 @@ final class SnapshotTests: XCTestCase {
 
     func testDefaultImage() {
         #if os(macOS)
-            let view = Image(nsImage: nil).skeleton(with: true)
+            let one = Image(nsImage: nil).skeleton(with: true)
         #else
-            let view = Image(uiImage: nil).skeleton(with: true)
+            let one = Image(uiImage: nil).skeleton(with: true)
         #endif
-        assertNamedSnapshot(matching: view, as: .image(size: CGSize(width: 100, height: 100)))
+        let two =  Image(nil, scale: .zero, label: Text(String())).skeleton(with: true)
+        let three = Image(nil).skeleton(with: true)
+        let four = Image(nil, label: Text(String())).skeleton(with: true)
+        assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 100)))
+        assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 100)))
+        assertNamedSnapshot(matching: three, as: .image(size: CGSize(width: 100, height: 100)))
+        assertNamedSnapshot(matching: four, as: .image(size: CGSize(width: 100, height: 100)))
     }
 
     func testCustomImage() {
         #if os(macOS)
-            let view = Image("checkmark").skeleton(with: true).shape(type: .circle).animation(type: .none)
+            let one = Image(nsImage: nil).skeleton(with: true).shape(type: .circle).animation(type: .none)
         #else
-            let view = Image(systemName: "checkmark").skeleton(with: true).appearance(type: .gradient()).shape(type: .circle).animation(type: .none)
+            let one = Image(uiImage: nil).skeleton(with: true).shape(type: .circle).animation(type: .none)
         #endif
-        assertNamedSnapshot(matching: view, as: .image(size: CGSize(width: 100, height: 100)))
+        let two =  Image(nil, scale: .zero, label: Text(String())).skeleton(with: true).shape(type: .circle).animation(type: .none)
+        let three = Image(nil).skeleton(with: true).shape(type: .circle).animation(type: .none)
+        let four = Image(nil, label: Text(String())).skeleton(with: true).shape(type: .circle).animation(type: .none)
+        assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 100)))
+        assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 100)))
+        assertNamedSnapshot(matching: three, as: .image(size: CGSize(width: 100, height: 100)))
+        assertNamedSnapshot(matching: four, as: .image(size: CGSize(width: 100, height: 100)))
+    }
+
+    func testSystemImage() {
+        #if os(macOS)
+            let one = Image(nil).skeleton(with: true)
+            let two = Image("checkmark").skeleton(with: true).shape(type: .circle).animation(type: .none)
+        #else
+            let one = Image(systemName: nil).skeleton(with: true)
+            let two = Image(systemName: "checkmark").skeleton(with: true).appearance(type: .gradient()).shape(type: .circle).animation(type: .none)
+        #endif
+        assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 100)))
+        assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 100)))
     }
 
     func testDefaultTextField() {
