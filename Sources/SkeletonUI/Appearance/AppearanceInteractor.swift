@@ -7,7 +7,7 @@ public enum GradientType: Equatable {
     case radial
 }
 
-extension Color {
+public struct SkeletonColor {
     public static var primary: Color {
         #if os(iOS)
             return Color(.systemGray4)
@@ -33,9 +33,10 @@ extension Color {
     }
 }
 
+
 public enum AppearanceType: Equatable {
-    case solid(color: Color = .primary, background: Color = .background)
-    case gradient(GradientType = .linear, color: Color = .primary, background: Color = .background, radius: CGFloat = 1, angle: CGFloat = .zero)
+    case solid(color: Color = SkeletonColor.primary, background: Color = SkeletonColor.background)
+    case gradient(GradientType = .linear, color: Color = SkeletonColor.primary, background: Color = SkeletonColor.background, radius: CGFloat = 1, angle: CGFloat = .zero)
 }
 
 // sourcery: AutoMockable
