@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.5](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.5)
+### Added
+-
+### Changed
+-
+### Removed
+-
+### Fixed
+- Fixes for iOS 14 new GeometryReader changes.
+- Fixed minor performance issue.
+
 ## [1.0.4](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.4)
 ### Added
 - SecureField support.
