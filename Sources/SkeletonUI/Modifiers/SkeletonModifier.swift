@@ -13,17 +13,19 @@ public struct SkeletonModifier: ViewModifier {
                             SkeletonView(skeleton: skeleton, line: line)
                                 .frame(width: skeleton.multiline.presenter.scale * geometry.size.width, height: geometry.size.height)
                                 .onAppear {
-                                    withAnimation(skeleton.animation.position.presenter.animation) {
-                                        skeleton.animation.position.value.send(skeleton.animation.position.presenter.range.upperBound)
-                                    }
-                                    withAnimation(skeleton.animation.opacity.presenter.animation) {
-                                        skeleton.animation.opacity.value.send(skeleton.animation.opacity.presenter.range.upperBound)
-                                    }
-                                    withAnimation(skeleton.animation.radius.presenter.animation) {
-                                        skeleton.animation.radius.value.send(skeleton.animation.radius.presenter.range.upperBound)
-                                    }
-                                    withAnimation(skeleton.animation.angle.presenter.animation) {
-                                        skeleton.animation.angle.value.send(skeleton.animation.angle.presenter.range.upperBound)
+                                    DispatchQueue.main.async {
+                                        withAnimation(skeleton.animation.position.presenter.animation) {
+                                            skeleton.animation.position.value.send(skeleton.animation.position.presenter.range.upperBound)
+                                        }
+                                        withAnimation(skeleton.animation.opacity.presenter.animation) {
+                                            skeleton.animation.opacity.value.send(skeleton.animation.opacity.presenter.range.upperBound)
+                                        }
+                                        withAnimation(skeleton.animation.radius.presenter.animation) {
+                                            skeleton.animation.radius.value.send(skeleton.animation.radius.presenter.range.upperBound)
+                                        }
+                                        withAnimation(skeleton.animation.angle.presenter.animation) {
+                                            skeleton.animation.angle.value.send(skeleton.animation.angle.presenter.range.upperBound)
+                                        }
                                     }
                                 }
                         }
