@@ -9,8 +9,9 @@ All notable changes to this project will be documented in this file.
 ### Removed
 -
 ### Fixed
-- Fixes for iOS 14 new GeometryReader changes.
-- Fixed minor performance issue.
+- Improved the way GeometryReader is used to fix its behaviour in the newest and previous SwiftUI versions.
+- Improved the performance in 'AnimationInteractor'.
+- Fixes a small bug that didn't let remove any animation.
 
 ## [1.0.4](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.4)
 ### Added
