@@ -9,18 +9,34 @@ public struct SkeletonModifier: ViewModifier {
             if skeleton.presenter.loading {
                 VStack(spacing: skeleton.multiline.presenter.spacing) {
                     ForEach(0 ..< skeleton.multiline.presenter.lines) { line in
-                        SkeletonView(skeleton: self.skeleton(line))
+                        GeometryReader { geometry in
+                            SkeletonView(skeleton: skeleton, line: line)
+                                .frame(width: skeleton.multiline.presenter.scale * geometry.size.width, height: geometry.size.height)
+                                .onAppear {
+                                    DispatchQueue.main.async {
+                                        withAnimation(skeleton.animation.position.presenter.animation) {
+                                            skeleton.animation.position.value.send(skeleton.animation.position.presenter.range.upperBound)
+                                        }
+                                        withAnimation(skeleton.animation.opacity.presenter.animation) {
+                                            skeleton.animation.opacity.value.send(skeleton.animation.opacity.presenter.range.upperBound)
+                                        }
+                                        withAnimation(skeleton.animation.radius.presenter.animation) {
+                                            skeleton.animation.radius.value.send(skeleton.animation.radius.presenter.range.upperBound)
+                                        }
+                                        withAnimation(skeleton.animation.angle.presenter.animation) {
+                                            skeleton.animation.angle.value.send(skeleton.animation.angle.presenter.range.upperBound)
+                                        }
+                                    }
+                                }
+                        }
                     }
-                }.transition(skeleton.presenter.transition)
+                }
+                .transition(skeleton.presenter.transition)
             } else {
-                content.transition(skeleton.presenter.transition)
+                content
+                    .transition(skeleton.presenter.transition)
             }
         }
         .animation(skeleton.presenter.animated, value: skeleton.presenter.loading)
-    }
-
-    private func skeleton(_ line: Int) -> SkeletonInteractable {
-        skeleton.multiline.line.send(line)
-        return skeleton
     }
 }
