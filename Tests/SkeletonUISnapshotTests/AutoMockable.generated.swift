@@ -93,6 +93,12 @@ class AppearanceInteractableMock: AppearanceInteractable {
 
 }
 class MultilineInteractableMock: MultilineInteractable {
+    var underlyingPadding: CurrentValueSubject<EdgeInsets?, Never>!
+    var padding: CurrentValueSubject<EdgeInsets?, Never> {
+        get { return underlyingPadding }
+        set(value) { underlyingPadding = value }
+    }
+    
     var presenter: MultilinePresenter {
         get { return underlyingPresenter }
         set(value) { underlyingPresenter = value }
