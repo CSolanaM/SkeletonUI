@@ -66,15 +66,15 @@ final class SnapshotTests: XCTestCase {
     }
 
     func testDefaultTextField() {
-        let one = TextField(nil, text: Binding.constant(String())).skeleton(with: true)
-        let two = TextField(nil, value: Binding.constant(String()), formatter: NumberFormatter()).skeleton(with: true)
+        let one = TextField("", text: Binding.constant(String())).skeleton(with: true)
+        let two = TextField("", value: Binding.constant(String()), formatter: NumberFormatter()).skeleton(with: true)
         assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 50)))
         assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 50)))
     }
 
     func testCustomTextField() {
-        let one = TextField(nil, text: Binding.constant(String())).skeleton(with: true).appearance(type: .gradient(.angular)).shape(type: .ellipse)
-        let two = TextField(nil, value: Binding.constant(String()), formatter: NumberFormatter()).skeleton(with: true).appearance(type: .gradient(.angular)).shape(type: .ellipse)
+        let one = TextField("", text: Binding.constant(String())).skeleton(with: true).appearance(type: .gradient(.angular)).shape(type: .ellipse)
+        let two = TextField("", value: Binding.constant(String()), formatter: NumberFormatter()).skeleton(with: true).appearance(type: .gradient(.angular)).shape(type: .ellipse)
         assertNamedSnapshot(matching: one, as: .image(size: CGSize(width: 100, height: 50)))
         assertNamedSnapshot(matching: two, as: .image(size: CGSize(width: 100, height: 50)))
     }
