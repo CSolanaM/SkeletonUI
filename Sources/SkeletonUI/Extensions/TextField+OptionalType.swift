@@ -1,7 +1,7 @@
 import SwiftUI
 
 public extension TextField where Label == Text {
-    init(_ titleKey: LocalizedStringKey?, text: Binding<String>, onEditingChanged: @escaping (Bool) -> Void = { _ in }, onCommit: @escaping () -> Void = {}) {
+    init(titleKey: LocalizedStringKey?, text: Binding<String>, onEditingChanged: @escaping (Bool) -> Void = { _ in }, onCommit: @escaping () -> Void = {}) {
         if let titleKey = titleKey {
             self.init(titleKey, text: text, onEditingChanged: onEditingChanged, onCommit: onCommit)
         } else {
@@ -17,7 +17,7 @@ public extension TextField where Label == Text {
         }
     }
 
-    init<T>(_ titleKey: LocalizedStringKey?, value: Binding<T>, formatter: Formatter, onEditingChanged: @escaping (Bool) -> Void = { _ in }, onCommit: @escaping () -> Void = {}) {
+    init<T>(titleKey: LocalizedStringKey?, value: Binding<T>, formatter: Formatter, onEditingChanged: @escaping (Bool) -> Void = { _ in }, onCommit: @escaping () -> Void = {}) {
         if let titleKey = titleKey {
             self.init(titleKey, value: value, formatter: formatter, onEditingChanged: onEditingChanged, onCommit: onCommit)
         } else {

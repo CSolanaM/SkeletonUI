@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.6](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.6)
+### Added
+-
+### Changed
+-
+### Removed
+-
+### Fixed
+- Renamed `TextField`'s `OptionalType` extension initializer signature to avoid conflicts.
+
 ## [1.0.5](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.5)
 ### Added
 -
