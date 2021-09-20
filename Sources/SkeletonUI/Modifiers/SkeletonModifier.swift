@@ -31,6 +31,8 @@ public struct SkeletonModifier: ViewModifier {
                         }
                     }
                 }
+                .padding(skeleton.multiline.presenter.padding ?? EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .frame(width: skeleton.presenter.width, height: skeleton.presenter.height)
                 .transition(skeleton.presenter.transition)
             } else {
                 content

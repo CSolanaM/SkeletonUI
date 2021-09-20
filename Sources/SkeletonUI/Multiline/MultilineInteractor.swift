@@ -9,6 +9,7 @@ protocol MultilineInteractable: AnyObject {
     var scale: CurrentValueSubject<CGFloat, Never> { get }
     var spacing: CurrentValueSubject<CGFloat?, Never> { get }
     var scales: CurrentValueSubject<[Int: CGFloat]?, Never> { get }
+    var padding: CurrentValueSubject<EdgeInsets?, Never> { get }
 }
 
 final class MultilineInteractor: MultilineInteractable {
@@ -18,6 +19,7 @@ final class MultilineInteractor: MultilineInteractable {
     let scale: CurrentValueSubject<CGFloat, Never>
     let spacing: CurrentValueSubject<CGFloat?, Never>
     let scales: CurrentValueSubject<[Int: CGFloat]?, Never>
+    let padding: CurrentValueSubject<EdgeInsets?, Never>
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -27,6 +29,8 @@ final class MultilineInteractor: MultilineInteractable {
         scale = CurrentValueSubject<CGFloat, Never>(presenter.scale)
         spacing = CurrentValueSubject<CGFloat?, Never>(presenter.spacing)
         scales = CurrentValueSubject<[Int: CGFloat]?, Never>(presenter.scales)
+        padding = CurrentValueSubject<EdgeInsets?, Never>(presenter.padding)
+
         line.map { [weak self] line in
             guard let self = self else { fatalError() }
             if let scale = self.scales.value?[line] {
@@ -37,5 +41,6 @@ final class MultilineInteractor: MultilineInteractable {
         lines.assign(to: \.lines, on: presenter).store(in: &cancellables)
         scales.assign(to: \.scales, on: presenter).store(in: &cancellables)
         spacing.assign(to: \.spacing, on: presenter).store(in: &cancellables)
+        padding.assign(to: \.padding, on: presenter).store(in: &cancellables)
     }
 }

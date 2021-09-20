@@ -25,7 +25,7 @@ struct CharacterView: View {
             Text(character?.name)
                 .skeleton(with: loading)
                 .shape(type: .capsule)
-                .multiline(lines: 3, scales: [1: 0.5, 2: 0.25])
+                .multiline(lines: 3, scales: [1: 0.5, 2: 0.25], padding: EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
                 .appearance(type: .gradient())
                 .animation(type: .linear())
         }
@@ -35,7 +35,7 @@ struct CharacterView: View {
 #if DEBUG
     struct CharacterView_Previews: PreviewProvider {
         static var previews: some View {
-            CharacterView(character: nil, loading: false)
+            CharacterView(character: nil, loading: true).previewLayout(.sizeThatFits).frame(width: 300, height: 100, alignment: .center)
         }
     }
 #endif

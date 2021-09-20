@@ -12,10 +12,11 @@ public extension ModifiedContent where Content: View, Modifier == SkeletonModifi
         return self
     }
 
-    func multiline(lines: Int, scales: [Int: CGFloat]? = nil, spacing: CGFloat? = nil) -> ModifiedContent<Content, SkeletonModifier> {
+    func multiline(lines: Int, scales: [Int: CGFloat]? = nil, spacing: CGFloat? = nil, padding: EdgeInsets? = nil) -> ModifiedContent<Content, SkeletonModifier> {
         modifier.skeleton.multiline.lines.send(lines)
         modifier.skeleton.multiline.scales.send(scales)
         modifier.skeleton.multiline.spacing.send(spacing)
+        modifier.skeleton.multiline.padding.send(padding)
         return self
     }
 

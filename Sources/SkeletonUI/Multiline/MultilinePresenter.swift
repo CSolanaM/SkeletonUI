@@ -6,4 +6,5 @@ final class MultilinePresenter: ObservableObject {
     @Published var spacing: CGFloat?
     @Published var scale: CGFloat = 1
     @Published var scales: [Int: CGFloat]?
+    @Published var padding: EdgeInsets?
 }
