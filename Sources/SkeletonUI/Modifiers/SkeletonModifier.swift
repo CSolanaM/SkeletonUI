@@ -31,6 +31,7 @@ public struct SkeletonModifier: ViewModifier {
                         }
                     }
                 }
+                .frame(width: skeleton.presenter.size?.width, height: skeleton.presenter.size?.height)
                 .transition(skeleton.presenter.transition)
             } else {
                 content
