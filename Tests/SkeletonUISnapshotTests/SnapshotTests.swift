@@ -22,6 +22,12 @@ final class SnapshotTests: XCTestCase {
         let view = Text(nil).skeleton(with: true).appearance(type: .solid()).shape(type: .rectangle).multiline(lines: 2, scales: [1: 0.5]).animation(type: .pulse())
         assertNamedSnapshot(matching: view, as: .image(size: CGSize(width: 100, height: 50)))
     }
+    
+    func testCustomSize() {
+        let size = CGSize(width: 100, height: 100)
+        let view = Text(nil).skeleton(with: true, size: size)
+        assertNamedSnapshot(matching: view, as: .image(size: size))
+    }
 
     func testDefaultImage() {
         #if os(macOS)
