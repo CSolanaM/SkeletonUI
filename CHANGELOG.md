@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.7](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.7)
+### Added
+- New skeleton / skeleton group (if using multiline) custom size.
+### Changed
+- Update Snapshot testing package to v1.9.0.
+### Removed
+-
+### Fixed
+-
+
 ## [1.0.6](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.6)
 ### Added
 -
