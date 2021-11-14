@@ -26,7 +26,7 @@ final class SnapshotTests: XCTestCase {
     func testCustomSize() {
         let size = CGSize(width: 100, height: 100)
         let view = Text(nil).skeleton(with: true, size: size)
-        assertNamedSnapshot(matching: view, as: .image(size: size), record: true)
+        assertNamedSnapshot(matching: view, as: .image(size: size))
     }
 
     func testDefaultImage() {
