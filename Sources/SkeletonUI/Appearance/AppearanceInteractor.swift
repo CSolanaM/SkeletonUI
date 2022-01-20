@@ -1,12 +1,16 @@
+#if arch(x86_64) || arch(arm64)
+
 import Combine
 import SwiftUI
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public enum GradientType: Equatable {
     case linear
     case angular
     case radial
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct SkeletonColor {
     public static var primary: Color {
         #if os(iOS)
@@ -33,18 +37,20 @@ public struct SkeletonColor {
     }
 }
 
-
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public enum AppearanceType: Equatable {
     case solid(color: Color = SkeletonColor.primary, background: Color = SkeletonColor.background)
     case gradient(GradientType = .linear, color: Color = SkeletonColor.primary, background: Color = SkeletonColor.background, radius: CGFloat = 1, angle: CGFloat = .zero)
 }
 
 // sourcery: AutoMockable
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 protocol AppearanceInteractable: AnyObject {
     var presenter: AppearancePresenter { get }
     var type: CurrentValueSubject<AppearanceType, Never> { get }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 final class AppearanceInteractor: AppearanceInteractable {
     let presenter = AppearancePresenter()
     let type: CurrentValueSubject<AppearanceType, Never>
@@ -56,3 +62,5 @@ final class AppearanceInteractor: AppearanceInteractable {
         type.assign(to: \.type, on: presenter).store(in: &cancellables)
     }
 }
+
+#endif

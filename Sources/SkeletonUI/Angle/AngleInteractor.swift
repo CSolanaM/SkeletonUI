@@ -1,7 +1,9 @@
+#if arch(x86_64) || arch(arm64)
+
 import Combine
 import SwiftUI
 
-// sourcery: AutoMockable
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 protocol AngleInteractable: AnyObject {
     var presenter: AnglePresenter { get }
     var animation: CurrentValueSubject<Animation?, Never> { get }
@@ -9,6 +11,7 @@ protocol AngleInteractable: AnyObject {
     var range: CurrentValueSubject<ClosedRange<Double>, Never> { get }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 final class AngleInteractor: AngleInteractable {
     let presenter = AnglePresenter()
     let animation: CurrentValueSubject<Animation?, Never>
@@ -27,3 +30,5 @@ final class AngleInteractor: AngleInteractable {
         range.map { $0.lowerBound }.assign(to: \.value, on: presenter).store(in: &cancellables)
     }
 }
+
+#endif
