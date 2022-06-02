@@ -10,8 +10,8 @@ SkeletonUI aims to bring an elegant, declarative syntax to skeleton loading anim
   s.author           = { 'CSolanaM' => 'carlos.solana.martinez@gmail.com' }
   s.source           = { :git => 'https://github.com/CSolanaM/SkeletonUI.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/CSolanaM'
-  s.ios.deployment_target = '13.0'
-  s.tvos.deployment_target = '13.0'
+  s.ios.deployment_target = '12.0'
+  s.tvos.deployment_target = '12.0'
   s.watchos.deployment_target = '6.0'
   s.macos.deployment_target = '10.15'
   s.swift_version = '5.0'
