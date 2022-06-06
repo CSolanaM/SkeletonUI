@@ -1,5 +1,8 @@
+#if arch(x86_64) || arch(arm64)
+
 import SwiftUI
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 final class SkeletonPresenter: ObservableObject {
     @Published var loading: Bool
     @Published var size: CGSize?
@@ -13,3 +16,5 @@ final class SkeletonPresenter: ObservableObject {
         self.animated = animated ?? .default
     }
 }
+
+#endif

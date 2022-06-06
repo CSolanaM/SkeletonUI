@@ -1,5 +1,8 @@
+#if arch(x86_64) || arch(arm64)
+
 import SwiftUI
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public extension TextField where Label == Text {
     init(titleKey: LocalizedStringKey?, text: Binding<String>, onEditingChanged: @escaping (Bool) -> Void = { _ in }, onCommit: @escaping () -> Void = {}) {
         if let titleKey = titleKey {
@@ -33,3 +36,5 @@ public extension TextField where Label == Text {
         }
     }
 }
+
+#endif

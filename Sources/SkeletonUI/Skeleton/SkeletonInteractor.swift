@@ -1,7 +1,9 @@
+#if arch(x86_64) || arch(arm64)
+
 import Combine
 import SwiftUI
 
-// sourcery: AutoMockable
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 protocol SkeletonInteractable: AnyObject {
     var presenter: SkeletonPresenter { get }
     var shape: ShapeInteractable { get }
@@ -10,6 +12,7 @@ protocol SkeletonInteractable: AnyObject {
     var animation: AnimationInteractable { get }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 final class SkeletonInteractor: SkeletonInteractable {
     let presenter: SkeletonPresenter
     let shape: ShapeInteractable
@@ -25,3 +28,5 @@ final class SkeletonInteractor: SkeletonInteractable {
         self.animation = animation
     }
 }
+
+#endif

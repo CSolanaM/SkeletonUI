@@ -1,6 +1,9 @@
+#if arch(x86_64) || arch(arm64)
+
 import Combine
 import SwiftUI
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public enum AnimationType: Equatable {
     case none
     case pulse(range: ClosedRange<Double> = .zero ... 1, duration: Double = 2, delay: Double = 1, speed: Double = 2, autoreverses: Bool = true)
@@ -8,6 +11,7 @@ public enum AnimationType: Equatable {
 }
 
 // sourcery: AutoMockable
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 protocol AnimationInteractable: AnyObject {
     var position: PositionInteractable { get }
     var opacity: OpacityInteractable { get }
@@ -16,6 +20,7 @@ protocol AnimationInteractable: AnyObject {
     var type: CurrentValueSubject<AnimationType, Never> { get }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 final class AnimationInteractor: AnimationInteractable {
     let position: PositionInteractable
     let opacity: OpacityInteractable
@@ -54,3 +59,5 @@ final class AnimationInteractor: AnimationInteractable {
         }.store(in: &cancellables)
     }
 }
+
+#endif
