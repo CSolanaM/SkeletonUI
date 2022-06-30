@@ -16,4 +16,5 @@ SkeletonUI aims to bring an elegant, declarative syntax to skeleton loading anim
   s.macos.deployment_target = '10.15'
   s.swift_version = '5.0'
   s.source_files = 'Sources/SkeletonUI/**/*'
+  s.weak_framework = 'SwiftUI'
 end
