@@ -8,7 +8,7 @@ public struct SkeletonModifier: ViewModifier {
         ZStack {
             if skeleton.presenter.loading {
                 VStack(spacing: skeleton.multiline.presenter.spacing) {
-                    ForEach(0 ..< skeleton.multiline.presenter.lines) { line in
+                    ForEach(0 ..< skeleton.multiline.presenter.lines, id: \.self) { line in
                         GeometryReader { geometry in
                             SkeletonView(skeleton: skeleton, line: line)
                                 .frame(width: skeleton.multiline.presenter.scale * geometry.size.width, height: geometry.size.height)
