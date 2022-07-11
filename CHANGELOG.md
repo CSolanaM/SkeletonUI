@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.8](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.8)
+### Added
+-
+### Changed
+- Update `.gitignore`.
+- ForEach now removes warning `Non-constant range: argument must be an integer literal warning`.
+### Removed
+-
+### Fixed
+-
+
 ## [1.0.7](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.7)
 ### Added
 - New skeleton / skeleton group (if using multiline) custom size.
