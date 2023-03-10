@@ -6,7 +6,7 @@ public struct SkeletonList<Data, Content>: View where Data: RandomAccessCollecti
     private let quantity: Int
     private let content: (Bool, Data.Element?) -> Content
 
-    public init(with data: Data, quantity: Int = 1, @ViewBuilder content: @escaping (Bool, Data.Element?) -> Content) {
+    public init(with data: Data, quantity: Int = 1, content: @escaping (Bool, Data.Element?) -> Content) {
         self.data = data
         self.quantity = quantity
         self.content = content
