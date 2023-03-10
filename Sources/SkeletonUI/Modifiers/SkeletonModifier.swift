@@ -1,5 +1,4 @@
 import SwiftUI
-import Combine
 
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct SkeletonModifier: ViewModifier {
@@ -14,7 +13,7 @@ public struct SkeletonModifier: ViewModifier {
                         GeometryReader { geometry in
                             SkeletonView(skeleton: skeleton, line: line)
                                 .frame(width: skeleton.multiline.presenter.scale * geometry.size.width, height: geometry.size.height)
-                                .onReceive(Just(animation)) { _ in
+                                .onReceive([animation].publisher.filter { $0 }.removeDuplicates().first()) { _ in
                                     withAnimation(skeleton.animation.position.presenter.animation) {
                                         skeleton.animation.position.value.send(skeleton.animation.position.presenter.range.upperBound)
                                     }
@@ -48,6 +47,6 @@ public struct SkeletonModifier: ViewModifier {
                     .transition(skeleton.presenter.transition)
             }
         }
-        .animation(skeleton.presenter.animated, value: skeleton.presenter.loading)
+        .animation(animation && skeleton.presenter.loading ? skeleton.presenter.animated : .none, value: skeleton.presenter.loading)
     }
 }
