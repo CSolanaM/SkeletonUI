@@ -47,6 +47,6 @@ public struct SkeletonModifier: ViewModifier {
                     .transition(skeleton.presenter.transition)
             }
         }
-        .animation(skeleton.presenter.animated, value: skeleton.presenter.loading)
+        .animation(animation && skeleton.presenter.loading ? skeleton.presenter.animated : .none, value: skeleton.presenter.loading)
     }
 }

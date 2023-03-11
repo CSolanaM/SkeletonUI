@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.11](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.11)
+### Added
+-
+### Changed
+-
+### Removed
+-
+### Fixed
+- Improved animations
+
 ## [1.0.10](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.10)
 ### Added
 -
