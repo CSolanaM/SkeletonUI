@@ -1,5 +1,5 @@
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="./Assets/headerdark.gif">
+  <source media="(prefers-color-scheme: dark)" srcset="./Assets/headerdark.gif">
   <img src="./Assets/header.gif">
 </picture>
 <p align='center'>
