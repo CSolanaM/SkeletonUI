@@ -1,6 +1,7 @@
-<p align='center'>
-	<img src='Assets/header.gif'>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./Assets/headerdark.gif">
+  <img src="./Assets/header.gif">
+</picture>
 <p align='center'>
 	<img src='https://github.com/CSolanaM/SkeletonUI/workflows/build/badge.svg'>
 	<img src='https://github.com/CSolanaM/SkeletonUI/workflows/test/badge.svg'>
