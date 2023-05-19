@@ -14,5 +14,5 @@ jobs:
           xcodebuild test -destination name="Apple TV" -scheme "SkeletonUISnapshotTests"
           xcodebuild test -destination name="Apple TV 4K (2nd generation)" -scheme "SkeletonUISnapshotTests"
           xcodebuild test -destination name="iPhone 8" -scheme "SkeletonUISnapshotTests"
-          xcodebuild test -destination name="iPhone 13 Pro Max" -scheme "SkeletonUISnapshotTests"
-          xcodebuild test -destination name="iPad Pro (12.9-inch) (5th generation)" -scheme "SkeletonUISnapshotTests"
+          xcodebuild test -destination name="iPhone 14 Pro Max" -scheme "SkeletonUISnapshotTests"
+          xcodebuild test -destination name="iPad Pro (12.9-inch) (6th generation)" -scheme "SkeletonUISnapshotTests"
