@@ -3,7 +3,7 @@ on: push
 jobs:
   build:
     name: test
-    runs-on: macOS-11
+    runs-on: macOS-12
     steps:
       - name: checkout
         uses: actions/checkout@master
