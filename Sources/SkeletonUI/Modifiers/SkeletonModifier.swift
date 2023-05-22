@@ -1,3 +1,5 @@
+#if arch(x86_64) || arch(arm64)
+
 import SwiftUI
 import Combine
 
@@ -51,3 +53,5 @@ public struct SkeletonModifier: ViewModifier {
         .animation(skeleton.presenter.animated, value: skeleton.presenter.loading)
     }
 }
+
+#endif

@@ -1,5 +1,8 @@
+#if arch(x86_64) || arch(arm64)
+
 import SwiftUI
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 struct SkeletonView: View {
     private var shape: ShapePresenter
     private var angle: AnglePresenter
@@ -23,3 +26,5 @@ struct SkeletonView: View {
         SkeletonShape(angle: angle, shape: shape, radius: radius, opacity: opacity, position: position, appearance: appearance)
     }
 }
+
+#endif

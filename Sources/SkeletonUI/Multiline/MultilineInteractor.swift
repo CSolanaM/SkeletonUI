@@ -1,7 +1,10 @@
+#if arch(x86_64) || arch(arm64)
+
 import Combine
 import SwiftUI
 
 // sourcery: AutoMockable
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 protocol MultilineInteractable: AnyObject {
     var presenter: MultilinePresenter { get }
     var line: CurrentValueSubject<Int, Never> { get }
@@ -11,6 +14,7 @@ protocol MultilineInteractable: AnyObject {
     var scales: CurrentValueSubject<[Int: CGFloat]?, Never> { get }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 final class MultilineInteractor: MultilineInteractable {
     let presenter = MultilinePresenter()
     let line: CurrentValueSubject<Int, Never>
@@ -39,3 +43,5 @@ final class MultilineInteractor: MultilineInteractable {
         spacing.assign(to: \.spacing, on: presenter).store(in: &cancellables)
     }
 }
+
+#endif

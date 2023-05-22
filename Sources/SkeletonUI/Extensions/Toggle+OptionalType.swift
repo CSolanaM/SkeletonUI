@@ -1,5 +1,8 @@
+#if arch(x86_64) || arch(arm64)
+
 import SwiftUI
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public extension Toggle where Label: View {
     init(isOn: Binding<Bool>?, @ViewBuilder label: () -> Label) {
         if let isOn = isOn {
@@ -10,6 +13,7 @@ public extension Toggle where Label: View {
     }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public extension Toggle where Label == Text {
     init(_ titleKey: LocalizedStringKey?, isOn: Binding<Bool>) {
         if let titleKey = titleKey {
@@ -27,3 +31,5 @@ public extension Toggle where Label == Text {
         }
     }
 }
+
+#endif

@@ -1,5 +1,8 @@
+#if arch(x86_64) || arch(arm64)
+
 import SwiftUI
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public extension SecureField where Label == Text {
     init(_ titleKey: LocalizedStringKey?, text: Binding<String>, onCommit: @escaping () -> Void = {}) {
         if let titleKey = titleKey {
@@ -17,3 +20,5 @@ public extension SecureField where Label == Text {
         }
     }
 }
+
+#endif
