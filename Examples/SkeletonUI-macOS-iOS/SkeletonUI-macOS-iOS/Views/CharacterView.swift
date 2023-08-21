@@ -17,17 +17,10 @@ struct CharacterView: View {
             Image(uiImage: UIImage(data: imageViewModel.data))
                 .resizable()
                 .skeleton(with: loading, animation: .linear(), appearance: .gradient(.radial), shape: .circle)
-//                .shape(type: .circle)
-//                .appearance(type: .gradient())
-//                .animation(type: .linear())
                 .frame(width: 100, height: 100)
                 .clipShape(Circle())
             Text(character?.name)
                 .skeleton(with: loading, animation: .linear(), appearance: .gradient(), shape: .capsule, lines: 3, scales: [1: 0.5, 2: 0.25])
-//                .shape(type: .capsule)
-//                .multiline(lines: 3, scales: [1: 0.5, 2: 0.25])
-//                .appearance(type: .gradient())
-//                .animation(type: .linear())
         }
     }
 }
