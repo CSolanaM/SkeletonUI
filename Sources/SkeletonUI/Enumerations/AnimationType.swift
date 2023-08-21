@@ -2,8 +2,8 @@ import SwiftUI
 
 public enum AnimationType: Equatable {
     case none
-    case pulse(duration: Double = 2, delay: Double = 1, speed: Double = 2, autoreverses: Bool = true)
-    case linear(duration: Double = 4, delay: Double = 1, speed: Double = 4, autoreverses: Bool = false)
+    case pulse(duration: Double = 1, delay: Double = 0.5, speed: Double = 1, autoreverses: Bool = true)
+    case linear(duration: Double = 1, delay: Double = 0.5, speed: Double = 1, autoreverses: Bool = false)
     
     var type: Animation? {
         switch self {

@@ -40,7 +40,8 @@ public enum AppearanceType: Equatable {
     func type(_ phase: CGFloat) -> some View {
         switch self {
         case let .solid(color, background):
-            color.background(background)
+            LinearGradient(colors: [color.opacity(phase)], startPoint: .leading, endPoint: .trailing)
+                .background(background)
         case let .gradient(.linear, color, background, radius, angle):
             LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: .clear, location: phase),
                                                       Gradient.Stop(color: color, location: phase + 0.25),

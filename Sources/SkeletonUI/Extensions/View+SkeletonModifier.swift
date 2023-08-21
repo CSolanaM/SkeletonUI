@@ -4,8 +4,7 @@ import SwiftUI
 public extension View {
     func skeleton(with loading: Bool,
                   size: CGSize? = .none,
-                  transition: AnyTransition = .opacity,
-                  animated: Animation? = .default,
+                  transition: (type: AnyTransition, animation: Animation?) = (.opacity, .default),
                   animation: AnimationType = .linear(),
                   appearance: AppearanceType = .gradient(),
                   shape: ShapeType = .capsule,
@@ -23,12 +22,12 @@ public extension View {
                     }
                 }
                 .frame(width: size?.width, height: size?.height)
-                .transition(transition)
+                .transition(transition.type)
             } else {
                 self
-                    .transition(transition)
+                    .transition(transition.type)
             }
         }
-        .animation(animated, value: loading)
+        .animation(transition.animation, value: loading)
     }
 }

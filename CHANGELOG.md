@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/CSolanaM/SkeletonUI/releases/tag/2.0.0)
+### Added
+-
+### Changed
+- Refactored old codebase to meet current SwiftUI standards. No Combine needed anymore!
+### Removed
+-
+### Fixed
+- Animations now use AnimatableModifier, improving performance and reliability
+
 ## [1.0.11](https://github.com/CSolanaM/SkeletonUI/releases/tag/1.0.11)
 ### Added
 -
