@@ -6,14 +6,14 @@ public struct SkeletonModifier: ViewModifier {
     let shape: ShapeType
     let animation: AnimationType
     let appearance: AppearanceType
-    @State var phase: Bool = false
+    @State var animate: Bool = false
 
     public func body(content: Content) -> some View {
         content
-            .modifier(AnimatedMask(CGFloat(integerLiteral: Int(truncating: phase as NSNumber)), appearance))
+            .modifier(AnimatedMask(CGFloat(integerLiteral: Int(truncating: animate as NSNumber)), appearance))
             .clipShape(SkeletonShape(shape))
             .animation(animation.type)
-            .onAppear { phase.toggle() }
+            .onAppear { animate.toggle() }
     }
 }
 
@@ -45,6 +45,5 @@ struct AnimatedMask: AnimatableModifier {
     
     func body(content: Content) -> some View {
         appearance.type(phase)
-            .opacity(1)
     }
 }
