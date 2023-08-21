@@ -95,7 +95,12 @@ struct UsersView: View {
     var body: some View {
         SkeletonList(with: users, quantity: 6) { loading, user in
             Text(user?.name)
-                .skeleton(with: loading, animation: .pulse(), appearance: .solid(color: .red, background: .blue), shape: .rectangle, lines: 3, scales: [1: 0.5])
+                .skeleton(with: loading,
+                          animation: .pulse(),
+                          appearance: .solid(color: .red, background: .blue),
+                          shape: .rectangle,
+                          lines: 3,
+                          scales: [1: 0.5])
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
