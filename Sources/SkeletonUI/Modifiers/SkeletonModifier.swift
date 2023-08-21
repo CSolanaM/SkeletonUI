@@ -3,51 +3,48 @@ import Combine
 
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct SkeletonModifier: ViewModifier {
-    let skeleton: SkeletonInteractable
-    @State var animation: Bool = false
+    let shape: ShapeType
+    let animation: AnimationType
+    let appearance: AppearanceType
+    @State var phase: Bool = false
 
     public func body(content: Content) -> some View {
-        ZStack {
-            if skeleton.presenter.loading {
-                VStack(spacing: skeleton.multiline.presenter.spacing) {
-                    ForEach(0 ..< skeleton.multiline.presenter.lines, id: \.self) { line in
-                        GeometryReader { geometry in
-                            SkeletonView(skeleton: skeleton, line: line)
-                                .frame(width: skeleton.multiline.presenter.scale * geometry.size.width, height: geometry.size.height)
-                                .onReceive(Just(animation).filter { $0 }) { _ in
-                                    withAnimation(skeleton.animation.position.presenter.animation) {
-                                        skeleton.animation.position.value.send(skeleton.animation.position.presenter.range.upperBound)
-                                    }
-                                    withAnimation(skeleton.animation.opacity.presenter.animation) {
-                                        skeleton.animation.opacity.value.send(skeleton.animation.opacity.presenter.range.upperBound)
-                                    }
-                                    withAnimation(skeleton.animation.radius.presenter.animation) {
-                                        skeleton.animation.radius.value.send(skeleton.animation.radius.presenter.range.upperBound)
-                                    }
-                                    withAnimation(skeleton.animation.angle.presenter.animation) {
-                                        skeleton.animation.angle.value.send(skeleton.animation.angle.presenter.range.upperBound)
-                                    }
-                                }
-                                .onAppear {
-                                    DispatchQueue.main.async {
-                                        animation = true
-                                    }
-                                }
-                                .onDisappear {
-                                    DispatchQueue.main.async {
-                                        animation = false
-                                    }
-                                }
-                        }
-                    }
-                }
-                .frame(width: skeleton.presenter.size?.width, height: skeleton.presenter.size?.height)
-                .transition(skeleton.presenter.transition)
-            } else {
-                content
-                    .transition(skeleton.presenter.transition)
-            }
-        }
-        .animation(skeleton.presenter.animated, value: skeleton.presenter.loading)
+        content
+            .modifier(AnimatedMask(CGFloat(integerLiteral: Int(truncating: phase as NSNumber)), appearance))
+            .clipShape(SkeletonShape(shape))
+            .animation(animation.type)
+            .onAppear { phase.toggle() }
+    }
+}
+
+struct SkeletonShape: Shape {
+    let shape: ShapeType
+
+    init(_ shape: ShapeType) {
+        self.shape = shape
+    }
+
+    func path(in rect: CGRect) -> Path {
+        shape.type.path(in: rect)
+    }
+}
+
+struct AnimatedMask: AnimatableModifier {
+    var phase: CGFloat
+    let appearance: AppearanceType
+
+    var animatableData: CGFloat {
+        get { phase }
+        set { phase = newValue }
+    }
+    
+    init(_ phase: CGFloat, _ appearance: AppearanceType) {
+        self.phase = phase
+        self.appearance = appearance
+    }
+    
+    func body(content: Content) -> some View {
+        appearance.type(phase)
+            .opacity(1)
     }
 }
