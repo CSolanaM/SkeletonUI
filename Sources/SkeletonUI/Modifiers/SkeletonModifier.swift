@@ -10,9 +10,8 @@ public struct SkeletonModifier: ViewModifier {
 
     public func body(content: Content) -> some View {
         content
-            .modifier(SkeletonAnimatableModifier(CGFloat(integerLiteral: Int(truncating: animate as NSNumber)), appearance))
+            .modifier(SkeletonAnimatableModifier(CGFloat(integerLiteral: Int(truncating: animate as NSNumber)), appearance).animation(animation.type))
             .clipShape(SkeletonShape(shape))
-            .animation(animation.type)
             .onAppear { animate.toggle() }
     }
 }
