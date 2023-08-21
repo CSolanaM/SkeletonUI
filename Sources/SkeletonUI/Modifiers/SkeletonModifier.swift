@@ -10,40 +10,9 @@ public struct SkeletonModifier: ViewModifier {
 
     public func body(content: Content) -> some View {
         content
-            .modifier(AnimatedMask(CGFloat(integerLiteral: Int(truncating: animate as NSNumber)), appearance))
+            .modifier(SkeletonAnimatableModifier(CGFloat(integerLiteral: Int(truncating: animate as NSNumber)), appearance))
             .clipShape(SkeletonShape(shape))
             .animation(animation.type)
             .onAppear { animate.toggle() }
-    }
-}
-
-struct SkeletonShape: Shape {
-    let shape: ShapeType
-
-    init(_ shape: ShapeType) {
-        self.shape = shape
-    }
-
-    func path(in rect: CGRect) -> Path {
-        shape.type.path(in: rect)
-    }
-}
-
-struct AnimatedMask: AnimatableModifier {
-    var phase: CGFloat
-    let appearance: AppearanceType
-
-    var animatableData: CGFloat {
-        get { phase }
-        set { phase = newValue }
-    }
-    
-    init(_ phase: CGFloat, _ appearance: AppearanceType) {
-        self.phase = phase
-        self.appearance = appearance
-    }
-    
-    func body(content: Content) -> some View {
-        appearance.type(phase)
     }
 }
