@@ -44,23 +44,29 @@ public enum AppearanceType: Equatable {
                 .background(background)
         case let .gradient(.linear, color, background, radius, angle):
             LinearGradient(gradient: Gradient(stops: [Gradient.Stop(color: .clear, location: phase),
-                                                      Gradient.Stop(color: color, location: phase + 0.25),
+                                                      Gradient.Stop(color: color.opacity(phase), location: phase + 0.25),
                                                       Gradient.Stop(color: .clear, location: phase + 0.5)]),
                            startPoint: UnitPoint(x: -radius * cos(angle.radians), y: -radius * sin(angle.radians)),
                            endPoint: UnitPoint(x: radius * cos(angle.radians), y: radius * sin(angle.radians)))
                 .background(background)
         case let .gradient(.radial, color, background, _, _):
             RadialGradient(gradient: Gradient(stops: [Gradient.Stop(color: .clear, location: phase),
-                                                      Gradient.Stop(color: color, location: phase + 0.25),
+                                                      Gradient.Stop(color: color.opacity(phase), location: phase + 0.25),
                                                       Gradient.Stop(color: .clear, location: phase + 0.5)]),
                            center: .center, startRadius: .zero, endRadius: 50)
                 .background(background)
         case let .gradient(.angular, color, background, _, _):
             AngularGradient(gradient: Gradient(stops: [Gradient.Stop(color: .clear, location: phase),
-                                                       Gradient.Stop(color: color, location: phase + 0.25),
+                                                       Gradient.Stop(color: color.opacity(phase), location: phase + 0.25),
                                                        Gradient.Stop(color: .clear, location: phase + 0.5)]),
                             center: .center, startAngle: .zero, endAngle: .degrees(360))
                 .background(background)
         }
+    }
+}
+
+private extension Color {
+    func opacity(_ phase: CGFloat) -> Color {
+        opacity(Double(phase <= 0.5 ? phase / 0.5 : (1 - phase) / 0.5))
     }
 }
