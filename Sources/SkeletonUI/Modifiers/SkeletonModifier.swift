@@ -3,6 +3,7 @@ import Combine
 
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct SkeletonModifier: ViewModifier {
+    @State private var phase: CGFloat = 0
     let shape: ShapeType
     let animation: AnimationType
     let appearance: AppearanceType
@@ -10,8 +11,11 @@ public struct SkeletonModifier: ViewModifier {
 
     public func body(content: Content) -> some View {
         content
-            .modifier(SkeletonAnimatableModifier(CGFloat(integerLiteral: Int(truncating: animate as NSNumber)), appearance).animation(animation.type))
+            .modifier(SkeletonAnimatableModifier(phase, appearance))
             .clipShape(SkeletonShape(shape))
-            .onAppear { animate.toggle() }
+            .animation(animation.type, value: phase)
+            .onAppear {
+                phase = 1
+            }
     }
 }
