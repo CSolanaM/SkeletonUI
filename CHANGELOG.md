@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.0.1](https://github.com/CSolanaM/SkeletonUI/releases/tag/2.0.1)
+### Added
+-
+### Changed
+-
+### Removed
+-
+### Fixed
+- Animations fixed for iOS 17, improving performance and reliability
+
 ## [2.0.0](https://github.com/CSolanaM/SkeletonUI/releases/tag/2.0.0)
 ### Added
 -

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SkeletonUI'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Elegant skeleton loading animation in SwiftUI and Combine'
   s.description      = <<-DESC
 SkeletonUI aims to bring an elegant, declarative syntax to skeleton loading animations. Get rid of loading screens or spinners and start using skeletons to represent final content shapes
