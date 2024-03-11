@@ -1,7 +1,7 @@
 import SwiftUI
 
 public extension Image {
-    #if os(iOS) || os(tvOS) || os(watchOS)
+    #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
         init(uiImage: UIImage?) {
             if let uiImage = uiImage {
                 self.init(uiImage: uiImage)
@@ -44,7 +44,7 @@ public extension Image {
         }
     }
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
+    #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
         init(systemName: String?) {
             if let systemName = systemName {
                 self.init(systemName: systemName)
@@ -54,7 +54,7 @@ public extension Image {
         }
     #endif
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
+    #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
         init(_ cgImage: CGImage?, scale: CGFloat, orientation: Image.Orientation = .up, label: Text) {
             if let cgImage = cgImage {
                 self.init(cgImage, scale: scale, orientation: orientation, label: label)
@@ -77,7 +77,7 @@ public extension Image {
         }
     #endif
 
-    #if os(iOS) || os(tvOS) || os(watchOS)
+    #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
         init(decorative cgImage: CGImage?, scale: CGFloat, orientation: Image.Orientation = .up) {
             if let cgImage = cgImage {
                 self.init(decorative: cgImage, scale: scale, orientation: orientation)

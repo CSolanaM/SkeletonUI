@@ -8,7 +8,7 @@ public enum GradientType: Equatable {
 
 public struct SkeletonColor {
     public static var primary: Color {
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
             return Color(.systemGray4)
         #elseif os(tvOS)
             return Color(.tertiaryLabel)
@@ -20,7 +20,7 @@ public struct SkeletonColor {
     }
 
     public static var background: Color {
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
             return Color(.systemGray6)
         #elseif os(tvOS)
             return Color(.secondaryLabel)
