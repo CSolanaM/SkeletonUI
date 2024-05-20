@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.0.2](https://github.com/CSolanaM/SkeletonUI/releases/tag/2.0.2)
+### Added
+-
+### Changed
+-
+### Removed
+-
+### Fixed
+- Fix for the issue reported in [rdar://FB13795514](https://openradar.appspot.com/FB13795514)
+
 ## [2.0.1](https://github.com/CSolanaM/SkeletonUI/releases/tag/2.0.1)
 ### Added
 -
