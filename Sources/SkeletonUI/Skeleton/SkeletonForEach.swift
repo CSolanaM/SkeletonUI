@@ -15,6 +15,7 @@ public struct SkeletonForEach<Data, Content>: View where Data: RandomAccessColle
     public var body: some View {
         ForEach(0 ..< (data.isEmpty ? quantity : data.count), id: \.self) { index in
             self.content(self.data.isEmpty, self.data.isEmpty ? nil : self.data.map { $0 }[index])
+                .if(self.data.isEmpty) { $0.id(UUID()) }
         }
     }
 }
