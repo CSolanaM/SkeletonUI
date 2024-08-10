@@ -1,11 +1,11 @@
 import SwiftUI
 
-public enum RoundedType: Equatable {
+public enum RoundedType: Equatable, Sendable {
     case radius(CGFloat, style: RoundedCornerStyle = .continuous)
     case size(CGSize, style: RoundedCornerStyle = .continuous)
 }
 
-public enum ShapeType: Equatable {
+public enum ShapeType: Equatable, Sendable {
     case rounded(RoundedType)
     case rectangle
     case circle
