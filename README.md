@@ -114,6 +114,29 @@ struct UsersView: View {
 }
 ```
 
+### Parent activation:
+
+```swift
+import SkeletonUI
+import SwiftUI
+
+struct UsersView: View {
+    @State var loading = true
+    let user: User
+
+    var body: some View {
+        VStack {
+            Text(user.name)
+                .skeleton()
+
+            Text(user.email)
+                .skeleton(with: false)
+        }
+        .skeletonActive(loading)
+    }
+}
+```
+
 # Change Log :calendar:
 
 See [CHANGELOG.md](https://github.com/CSolanaM/SkeletonUI/blob/master/CHANGELOG.md) for details.
