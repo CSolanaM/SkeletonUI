@@ -1,6 +1,6 @@
 import SwiftUI
 
-public extension TextField where Label == Text {
+extension TextField where Label == Text {
     init(titleKey: LocalizedStringKey?, text: Binding<String>, onEditingChanged: @escaping (Bool) -> Void = { _ in }, onCommit: @escaping () -> Void = {}) {
         if let titleKey = titleKey {
             self.init(titleKey, text: text, onEditingChanged: onEditingChanged, onCommit: onCommit)

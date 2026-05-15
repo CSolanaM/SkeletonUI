@@ -1,6 +1,6 @@
 import SwiftUI
 
-public extension Text {
+extension Text {
     init<S>(_ content: S?) where S: OptionalType, S.Wrapped: StringProtocol {
         if let content = content?.wrapped {
             self.init(content)

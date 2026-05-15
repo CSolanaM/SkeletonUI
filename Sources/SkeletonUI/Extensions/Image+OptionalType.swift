@@ -1,6 +1,6 @@
 import SwiftUI
 
-public extension Image {
+extension Image {
     #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS)
         init(uiImage: UIImage?) {
             if let uiImage = uiImage {
